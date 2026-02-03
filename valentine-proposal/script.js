@@ -7,7 +7,6 @@ function initializePage() {
 function setupProposalButtons() {
     const yesBtn = document.getElementById('yes-btn');
     const noBtn = document.getElementById('no-btn');
-    const buttonsContainer = document.querySelector('.buttons');
 
     yesBtn.addEventListener('click', function() {
         showResponse(true);
@@ -16,36 +15,6 @@ function setupProposalButtons() {
     noBtn.addEventListener('click', function() {
         // No button is disabled, so this shouldn't happen
         // But just in case, do nothing
-    });
-
-    // Create placeholder to maintain layout when No button moves
-    const placeholder = document.createElement('div');
-    placeholder.style.width = '120px'; // Same width as button
-    placeholder.style.height = '50px'; // Same height as button
-    placeholder.style.flexShrink = '0'; // Don't shrink
-    placeholder.style.visibility = 'hidden'; // Invisible but takes space
-    placeholder.id = 'no-btn-placeholder';
-
-    // Insert placeholder after No button
-    noBtn.insertAdjacentElement('afterend', placeholder);
-
-    // Make "No" button move to random location on screen when mouse gets close
-    noBtn.addEventListener('mouseenter', function() {
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
-        const buttonWidth = 120; // Approximate button width
-        const buttonHeight = 50; // Approximate button height
-
-        // Generate random position across entire viewport, ensuring button stays visible
-        const randomX = Math.random() * Math.max(50, viewportWidth - buttonWidth);
-        const randomY = Math.random() * Math.max(50, viewportHeight - buttonHeight);
-
-        // Move button to absolute position on screen
-        noBtn.style.position = 'fixed';
-        noBtn.style.left = randomX + 'px';
-        noBtn.style.top = randomY + 'px';
-        noBtn.style.transform = 'none'; // Reset any transform
-        noBtn.style.zIndex = '10000'; // Ensure it's on top
     });
 }
 
