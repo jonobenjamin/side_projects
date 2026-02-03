@@ -92,7 +92,6 @@ h1 {
 .no-btn.disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    pointer-events: none;
 }
 
 .no-btn.disabled:hover {
