@@ -16,6 +16,26 @@ function setupProposalButtons() {
         // No button is disabled, so this shouldn't happen
         // But just in case, do nothing
     });
+
+    // Make "No" button move when mouse gets close (but keep it in document flow)
+    noBtn.addEventListener('mouseenter', function() {
+        const container = document.querySelector('.container');
+        const containerRect = container.getBoundingClientRect();
+        const buttonRect = noBtn.getBoundingClientRect();
+
+        // Generate random position within a reasonable area around the container
+        const offsetX = (Math.random() - 0.5) * 400; // -200 to +200 pixels
+        const offsetY = (Math.random() - 0.5) * 300; // -150 to +150 pixels
+
+        // Move button using transform (keeps it in document flow)
+        noBtn.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        noBtn.style.zIndex = '10000';
+    });
+
+    // Reset position when mouse leaves
+    noBtn.addEventListener('mouseleave', function() {
+        noBtn.style.transform = 'translate(0, 0)';
+    });
 }
 
 // Show response after button click
