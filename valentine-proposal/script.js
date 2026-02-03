@@ -7,6 +7,7 @@ function initializePage() {
 function setupProposalButtons() {
     const yesBtn = document.getElementById('yes-btn');
     const noBtn = document.getElementById('no-btn');
+    const buttonsContainer = document.querySelector('.buttons');
 
     yesBtn.addEventListener('click', function() {
         showResponse(true);
@@ -16,6 +17,17 @@ function setupProposalButtons() {
         // No button is disabled, so this shouldn't happen
         // But just in case, do nothing
     });
+
+    // Create placeholder to maintain layout when No button moves
+    const placeholder = document.createElement('div');
+    placeholder.style.width = '120px'; // Same width as button
+    placeholder.style.height = '50px'; // Same height as button
+    placeholder.style.flexShrink = '0'; // Don't shrink
+    placeholder.style.visibility = 'hidden'; // Invisible but takes space
+    placeholder.id = 'no-btn-placeholder';
+
+    // Insert placeholder after No button
+    noBtn.insertAdjacentElement('afterend', placeholder);
 
     // Make "No" button move to random location on screen when mouse gets close
     noBtn.addEventListener('mouseenter', function() {
