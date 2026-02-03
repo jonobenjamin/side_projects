@@ -17,15 +17,22 @@ function setupProposalButtons() {
         // But just in case, do nothing
     });
 
-    // Make "No" button move away on hover
-    noBtn.addEventListener('mouseover', function() {
-        const randomX = Math.random() * 200 - 100;
-        const randomY = Math.random() * 200 - 100;
-        noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
-    });
+    // Make "No" button move to random location on screen when mouse gets close
+    noBtn.addEventListener('mouseenter', function() {
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        const buttonWidth = noBtn.offsetWidth;
+        const buttonHeight = noBtn.offsetHeight;
 
-    noBtn.addEventListener('mouseout', function() {
-        noBtn.style.transform = '';
+        // Generate random position across entire viewport
+        const randomX = Math.random() * (viewportWidth - buttonWidth);
+        const randomY = Math.random() * (viewportHeight - buttonHeight);
+
+        // Move button to absolute position
+        noBtn.style.position = 'fixed';
+        noBtn.style.left = randomX + 'px';
+        noBtn.style.top = randomY + 'px';
+        noBtn.style.transform = 'none'; // Reset any transform
     });
 }
 
