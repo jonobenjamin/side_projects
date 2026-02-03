@@ -16,6 +16,17 @@ function setupProposalButtons() {
         // No button is disabled, so this shouldn't happen
         // But just in case, do nothing
     });
+
+    // Make "No" button move away on hover
+    noBtn.addEventListener('mouseover', function() {
+        const randomX = Math.random() * 200 - 100;
+        const randomY = Math.random() * 200 - 100;
+        noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    });
+
+    noBtn.addEventListener('mouseout', function() {
+        noBtn.style.transform = '';
+    });
 }
 
 // Show response after button click
