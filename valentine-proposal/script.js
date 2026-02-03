@@ -21,18 +21,13 @@ function setupProposalButtons() {
     noBtn.addEventListener('mouseenter', function() {
         const viewportWidth = window.innerWidth;
         const viewportHeight = window.innerHeight;
-        const buttonWidth = noBtn.offsetWidth;
-        const buttonHeight = noBtn.offsetHeight;
 
-        // Generate random position across entire viewport
-        const randomX = Math.random() * (viewportWidth - buttonWidth);
-        const randomY = Math.random() * (viewportHeight - buttonHeight);
+        // Generate large random translation values to move button anywhere on screen
+        const randomX = (Math.random() - 0.5) * viewportWidth * 2; // -viewportWidth to +viewportWidth
+        const randomY = (Math.random() - 0.5) * viewportHeight * 2; // -viewportHeight to +viewportHeight
 
-        // Move button to absolute position
-        noBtn.style.position = 'fixed';
-        noBtn.style.left = randomX + 'px';
-        noBtn.style.top = randomY + 'px';
-        noBtn.style.transform = 'none'; // Reset any transform
+        // Move button using transform (keeps it in document flow)
+        noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
     });
 }
 
