@@ -98,7 +98,8 @@ h1 {
     background: #666;
     border-color: #666;
     transition: all 0.3s ease;
-    z-index: 1000;
+    z-index: 9999;
+    position: relative;
 }
 
 .no-btn.disabled:hover {
