@@ -1,0 +1,31 @@
+{
+  "name": "valentine-proposal",
+  "version": "1.0.0",
+  "description": "A beautiful Valentine's Day proposal website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'No build step required'",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/valentine-proposal.git"
+  },
+  "keywords": [
+    "valentine",
+    "proposal",
+    "romantic",
+    "website"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/valentine-proposal/issues"
+  },
+  "homepage": "https://github.com/yourusername/valentine-proposal#readme",
+  "devDependencies": {
+    "gh-pages": "^4.0.0",
+    "serve": "^14.2.0"
+  }
+}

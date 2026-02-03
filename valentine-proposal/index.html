@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="proposal-card">
+            <h1 id="title">Create a Proposal</h1>
+
+            <div id="creator-section" class="creator-section">
+                <h2>Make 'No' unclickable?</h2>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="no-unclickable" checked>
+                    <label for="no-unclickable">Yes, make 'No' unclickable</label>
+                </div>
+                <button id="generate-link" class="generate-btn">Generate Link</button>
+
+                <div id="generated-link" class="generated-link" style="display: none;">
+                    <p>Your proposal link:</p>
+                    <input type="text" id="link-input" readonly>
+                    <button id="copy-link" class="copy-btn">Copy Link</button>
+                </div>
+            </div>
+
+            <div id="proposal-section" class="proposal-section" style="display: none;">
+                <div class="luck-section">
+                    <h3>🍀 Boost Your Luck?</h3>
+                    <p>Buying the developer a coffee grants <strong>+100 Karma</strong>.</p>
+                    <a href="https://www.buymeacoffee.com/" target="_blank" class="coffee-btn">
+                        💝 Buy Me a Coffee
+                    </a>
+                </div>
+
+                <div class="question-section">
+                    <h2 id="question">Will you be my Valentine?</h2>
+                    <div class="buttons">
+                        <button id="yes-btn" class="yes-btn">Yes</button>
+                        <button id="no-btn" class="no-btn">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
