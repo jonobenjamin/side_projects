@@ -59,6 +59,7 @@ h1 {
     gap: 30px;
     margin-top: 20px;
     position: relative;
+    min-height: 60px; /* Ensure container maintains height */
 }
 
 .yes-btn, .no-btn {
@@ -92,9 +93,9 @@ h1 {
 }
 
 .no-btn.disabled {
-    opacity: 0.6;
+    opacity: 1.0;
     cursor: not-allowed;
-    background: linear-gradient(135deg, #666, #555);
+    background: #666;
     border-color: #666;
     transition: all 0.3s ease;
     z-index: 1000;
