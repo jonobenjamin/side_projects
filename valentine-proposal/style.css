@@ -58,6 +58,7 @@ h1 {
     justify-content: center;
     gap: 30px;
     margin-top: 20px;
+    position: relative;
 }
 
 .yes-btn, .no-btn {
@@ -87,14 +88,20 @@ h1 {
     background: linear-gradient(135deg, #f44336, #d32f2f);
     border-color: #f44336;
     color: white;
+    z-index: 1000;
 }
 
 .no-btn.disabled {
-    opacity: 0.5;
+    opacity: 0.6;
     cursor: not-allowed;
+    background: linear-gradient(135deg, #666, #555);
+    border-color: #666;
+    transition: all 0.3s ease;
+    z-index: 1000;
 }
 
 .no-btn.disabled:hover {
+    background: linear-gradient(135deg, #666, #555);
     transform: none;
     box-shadow: none;
 }
